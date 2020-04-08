@@ -115,7 +115,7 @@ class MyHomePage extends StatelessWidget {
                             "Orders",
                             style: TextStyle(color: Colors.white),
                           ),
-                          onPressed: () {},
+                          onPressed: () {pop(context);},
                         ),
                         FlatButton(
                           child: Text(
