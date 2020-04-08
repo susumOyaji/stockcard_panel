@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      title: 'Flutter Demo',
+      title: 'StockCard_Panel Demo',
       theme: ThemeData(),
       home: MyHomePage(),
     );
@@ -67,7 +67,7 @@ class MyHomePage extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "\$",
+                          text: "￥",
                           style: TextStyle(fontSize: 13.0, color: Colors.white),
                         ),
                         TextSpan(
@@ -126,9 +126,9 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(child: 
+            //Expanded(child: 
             SnackBarPage(),
-            ),
+            //),
             /*
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 11),
@@ -307,219 +307,23 @@ class SpecialContainer extends StatelessWidget {
 class SnackBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      bottomNavigationBar: BottomAppBar(
-        notchMargin: 5,
-        shape: CircularNotchedRectangle(),
-        color: Color(0xff1f1f1f),//lightBlack,
-        //duration: Duration(seconds: 3),
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.home,
-                color: Colors.white,
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.bookmark_border,
-                color: Colors.white,
-              ),
-              onPressed: () {},
-            ),
-            
-            IconButton(
-              icon: CircleAvatar(
-                backgroundColor: Colors.red,
-                //backgroundImage: NetworkImage(
-                //  "https://cdn.pixabay.com/photo/2019/12/23/08/15/alaska-4714097_960_720.jpg",
-                //),
-              ),
-              onPressed: () {},
-            )
-            
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.apps),
-        backgroundColor: Colors.deepPurpleAccent,
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      /*
-      appBar: AppBar(
-        backgroundColor:  Color(0xff1f1f1f),//lightBlack,
-        elevation: 0.0,
-        leading: IconButton(
-          icon: Icon(
-            Icons.notifications_none,
-            color: Colors.white,
-          ),
-          onPressed: () {},
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.shopping_basket),
-            onPressed: () {},
-          )
-        ],
-      ),*/
-      body: Column(
-        children: <Widget>[
-          //HomeHeader(),
-          Expanded(
-            child: ListView.builder(
-              itemCount: products.length,
-              itemBuilder: (ctx, i) {
-                return GestureDetector(
-                  onTap: () {
-                    //Navigator.push(
-                    //  context,
-                      //MaterialPageRoute(
-                      //  builder: (context) => ProductScreen(id: i),
-                      //),
-                    //);
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.all(15.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            //CircleAvatar(
-                            //  backgroundColor: Colors.purple,
-                            //  backgroundImage: NetworkImage(products[i].img),
-                            //),
-                            /*
-                            SizedBox(width: 5.0),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    products[i].author,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .title
-                                        .copyWith(
-                                          color: Colors.white,
-                                        ),
-                                  ),
-                                  Text(
-                                    products[i].location,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .subtitle
-                                        .copyWith(color: Colors.grey),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            */
-                            /*
-                            IconButton(
-                              icon: Icon(Icons.more_vert, color: Colors.white),
-                              onPressed: () {},
-                            )
-                            */
-                          ],
-                        ),
-                        /*
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        ConstrainedBox(
-                          constraints: BoxConstraints(
-                            maxHeight: MediaQuery.of(context).size.height / 3,
-                            minWidth: double.infinity
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(25.0),
-                            child: Image.network(
-                              products[i].img,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        Text(
-                          products[i].title,
-                          style: Theme.of(context).textTheme.title.copyWith(
-                                color: Colors.white.withOpacity(.85),
-                              ),
-                        ),
-                        */
-                        Row(
-                          children: <Widget>[
-                            /*
-                            FlatButton.icon(
-                              icon: Icon(
-                                Icons.message,
-                                color: Colors.white,
-                              ),
-                              label: Text(
-                                "${products[i].comments}",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .button
-                                    .copyWith(color: Colors.white),
-                              ),
-                              onPressed: () {},
-                            ),
-                            */
-                            /*
-                            FlatButton.icon(
-                              icon: Icon(
-                                Icons.favorite_border,
-                                color: Colors.white,
-                              ),
-                              label: Text(
-                                "${products[i].likes}",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .button
-                                    .copyWith(color: Colors.white),
-                              ),
-                              onPressed: () {},
-                            ),
-                            */
-                            /*
-                            Spacer(),
-                            IconButton(
-                              icon: Icon(
-                                Icons.bookmark_border,
-                                color: Colors.white,
-                              ),
-                              onPressed: () {},
-                            )
-                            */
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                );
+    return Container(
+      child: RaisedButton(
+        onPressed: () {
+          final snackBar = SnackBar(
+            content: Text('お知らせ！'),
+            action: SnackBarAction(
+              label: 'とじる',
+              onPressed: () {
+                Scaffold.of(context).removeCurrentSnackBar();
               },
             ),
-          )
-        ],
-      ),
+            duration: Duration(seconds: 1),
+          );
+          Scaffold.of(context).showSnackBar(snackBar);
+        }, 
+        child: Text('スナックバーを開く'),
+      ), 
     );
   }
 }
