@@ -98,7 +98,7 @@ class MyHomePage extends StatelessWidget {
                             "Orders",
                             style: TextStyle(color: Colors.white),
                           ),
-                          onPressed: () {},
+                          onPressed: () { SnackBarPage();},
                         ),
                         FlatButton(
                           child: Text(
