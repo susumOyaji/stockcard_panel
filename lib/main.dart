@@ -98,7 +98,19 @@ class MyHomePage extends StatelessWidget {
                             "Orders",
                             style: TextStyle(color: Colors.white),
                           ),
-                          onPressed: () { SnackBarPage();},
+                          onPressed: () {
+                            final snackBar = SnackBar(
+                              content: Text('お知らせ！'),
+                              action: SnackBarAction(
+                                label: 'とじる',
+                                onPressed: () {
+                                  Scaffold.of(context).removeCurrentSnackBar();
+                                },
+                              ),
+                              duration: Duration(seconds: 1),
+                            );
+                            Scaffold.of(context).showSnackBar(snackBar);
+                          },
                         ),
                         FlatButton(
                           child: Text(
@@ -127,7 +139,7 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             //Expanded(child: 
-            SnackBarPage(),
+            //SnackBarPage(),
             //),
             /*
             Padding(
