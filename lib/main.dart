@@ -19,6 +19,23 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+
+pop(context){
+  final snackBar = SnackBar(
+    content: Text('お知らせ！'),
+    action: SnackBarAction(
+      label: 'とじる',
+      onPressed: () {
+        Scaffold.of(context).removeCurrentSnackBar();
+      },
+    ),
+    duration: Duration(seconds: 1),
+    );
+    Scaffold.of(context).showSnackBar(snackBar);
+}
+
+
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -98,19 +115,7 @@ class MyHomePage extends StatelessWidget {
                             "Orders",
                             style: TextStyle(color: Colors.white),
                           ),
-                          onPressed: () {
-                            final snackBar = SnackBar(
-                              content: Text('お知らせ！'),
-                              action: SnackBarAction(
-                                label: 'とじる',
-                                onPressed: () {
-                                  Scaffold.of(context).removeCurrentSnackBar();
-                                },
-                              ),
-                              duration: Duration(seconds: 1),
-                            );
-                            Scaffold.of(context).showSnackBar(snackBar);
-                          },
+                          onPressed: () {},
                         ),
                         FlatButton(
                           child: Text(
@@ -183,6 +188,10 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
+
+
+
 
 class BottomNavigationItem extends StatelessWidget {
   final type;
