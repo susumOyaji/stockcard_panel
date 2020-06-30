@@ -19,9 +19,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-
-pop(context){
+pop(context) {
   final snackBar = SnackBar(
     content: Text('お知らせ！'),
     action: SnackBarAction(
@@ -31,10 +29,9 @@ pop(context){
       },
     ),
     duration: Duration(seconds: 1),
-    );
-    Scaffold.of(context).showSnackBar(snackBar);
+  );
+  Scaffold.of(context).showSnackBar(snackBar);
 }
-
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -65,7 +62,7 @@ class MyHomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        "Hello Amazigh!",
+                        "Stocks",
                         style: TextStyle(color: Colors.white, fontSize: 25),
                       ),
                       CircleAvatar(
@@ -115,7 +112,9 @@ class MyHomePage extends StatelessWidget {
                             "Orders",
                             style: TextStyle(color: Colors.white),
                           ),
-                          onPressed: () {pop(context);},
+                          onPressed: () {
+                            pop(context);
+                          },
                         ),
                         FlatButton(
                           child: Text(
@@ -133,7 +132,7 @@ class MyHomePage extends StatelessWidget {
             Expanded(
               child: Container(
                 child: GridView.count(
-                  crossAxisCount: 2,
+                  crossAxisCount: 3,
                   children: <Widget>[
                     SpecialContainer(SpecialContainerType.customers),
                     SpecialContainer(SpecialContainerType.products),
@@ -143,7 +142,7 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
             ),
-            //Expanded(child: 
+            //Expanded(child:
             //SnackBarPage(),
             //),
             /*
@@ -158,8 +157,6 @@ class MyHomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                   
-                    
                     BottomNavigationItem(
                       type: BottomNav.home,
                       isActive: true,
@@ -176,7 +173,6 @@ class MyHomePage extends StatelessWidget {
                       type: BottomNav.profile,
                       isActive: false,
                     ),
-                    
                   ],
                 ),
               ),
@@ -188,10 +184,6 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-
-
-
-
 
 class BottomNavigationItem extends StatelessWidget {
   final type;
@@ -270,8 +262,8 @@ class SpecialContainer extends StatelessWidget {
       child: InkWell(
         onTap: () {},
         child: Container(
-          margin: EdgeInsets.all(15),
-          padding: EdgeInsets.all(15),
+          margin: EdgeInsets.all(5),
+          padding: EdgeInsets.all(0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             color: Colors.white12,
@@ -297,10 +289,12 @@ class SpecialContainer extends StatelessWidget {
                   child: Container(
                     width: 31,
                     height: 31,
-                    child: Image.asset(containerImage,),
+                    child: Image.asset(
+                      containerImage,
+                    ),
                   ),
                   backgroundColor: color,
-                  radius: 25,
+                  radius: 15,
                 ),
               ),
               Row(
@@ -324,7 +318,6 @@ class SpecialContainer extends StatelessWidget {
   }
 }
 
-
 class SnackBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -342,16 +335,12 @@ class SnackBarPage extends StatelessWidget {
             duration: Duration(seconds: 1),
           );
           Scaffold.of(context).showSnackBar(snackBar);
-        }, 
+        },
         child: Text('スナックバーを開く'),
-      ), 
+      ),
     );
   }
 }
-
-
-
-
 
 class Products {
   final String title, location, img, author;
@@ -369,9 +358,6 @@ class Products {
 }
 
 List<Products> products = [
-  
- 
-  
   Products(
     author: "Cybdom",
     comments: 10495,
